@@ -1,0 +1,176 @@
+/* ========== GLOBAL (STYLE PAR DÉFAUT POUR TOUS LES ÉCRANS) ========== */
+
+img {
+    width: 40%;
+}
+
+/* En-tête noir centré avec texte blanc */
+.header {
+    background-color: black;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+/* Pied de page noir centré avec texte blanc */
+footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+}
+
+/* Conteneur principal */
+main {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Bouton stylisé */
+.button {
+    background-color: rgb(175, 76, 15);
+    border-radius: 20px;
+    width: 80px;
+    border-style: none;
+    padding: 2% 1%;
+}
+
+/* Lien dans bouton */
+.button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Bloc de contenu (chaque section) */
+.section {
+    width: 60%;
+    background-color: rgb(147, 147, 147); /* gris par défaut */
+    border-radius: 20px;
+    margin: 15px;
+    padding: 5px 9px;
+}
+
+/* Utilisation de flexbox pour organiser le contenu */
+.flex {
+    display: flex;
+    padding: 5% 9%;
+}
+
+/* Image utilisateur */
+.imgUser {
+    width: 50%;
+}
+
+
+/* ========== MOBILE (moins de 600px) ========== */
+
+@media screen and (max-width: 599px) {
+
+    /* Masquer l'image sur mobile */
+    .imgUser {
+        display: none;
+    }
+
+    /* Affichage vertical pour le contenu */
+    .flex {
+        display: flex;
+        flex-direction: column;
+        padding: 5% 9%;
+    }
+
+    /* Fond gris et empilement vertical du contenu */
+    .section {
+        background-color: rgb(147, 147, 147);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Bouton aligné à droite dans chaque section */
+    .button {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+}
+
+
+/* ========== TABLETTE (600px à 1023px) ========== */
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+
+    /* Réorganiser les sections en ligne et les faire wrap */
+    main {
+        background-color: rgb(199, 199, 199);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* Masquer l'image sur tablette aussi */
+    .imgUser {
+        display: none;
+    }
+
+    /* Sections en format carte compacte */
+    .section {
+        position: relative;
+        border: 1px solid black;
+        background-color: white;
+        width: 20%;
+        margin: 30px;
+        flex-direction: column;
+        padding: 2% 1%;
+        display: flex;
+    }
+}
+
+
+/* ========== DESKTOP (1024px et plus) ========== */
+
+@media screen and (min-width: 1024px) {
+
+    /* Titres en rouge */
+    h1, h2 {
+        color: red;
+    }
+
+    /* Style de section pour grand écran */
+    .section {
+        position: relative;
+        border: 2px solid black;
+        background-color: white;
+        width: 20%;
+        margin: 30px;
+        flex-direction: column;
+        padding: 5px 9px;
+    }
+
+    /* Bouton positionné en bas à droite de chaque section */
+    .button {
+        background-color: black;
+        position: absolute;
+        top: 95%;
+        left: 85%;
+        width: 60px;
+        padding: 2% 1%;
+    }
+
+    /* Layout horizontal */
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* Centrer le contenu des divs internes */
+    .flex > div {
+        display: flex;
+        align-items: center;
+    }
+}
